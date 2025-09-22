@@ -1,6 +1,11 @@
 package com.s.rattrouge.Entity;
 
-public class Book {
 
 
+    public class Book {
+
+            private int id;
+            private String title;
+            private String author;
+            private boolean available;
 }
