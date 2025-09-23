@@ -1,34 +1,46 @@
 package com.s.rattrouge.Entity;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+
 
 @Entity
-
 public class Book {
-@Id
-@GeneratedValue
-            private int id;
-            private String title;
-            private String author;
-            private boolean available;
+    @Id
+    @GeneratedValue()
+    private Long id;
+    private String title;
+    private String author;
+    private boolean available;
 
+     @ManyToOne
+     private Library library;
 
-    public Book(int id, String title, String author, boolean available) {
+    public Book(Long id, String title, String author, boolean available, Library library) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.available = available;
+        this.library = library;
     }
-    public Book(){}
 
-    public int getId() {
+    public Book() {
+
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Library getLibrary() {
+        return library;
+    }
+
+    public void setLibrary(Library library) {
+        this.library = library;
     }
 
     public String getTitle() {
