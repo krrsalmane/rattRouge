@@ -1,35 +1,21 @@
-package com.s.rattrouge.Entity;
-import jakarta.persistence.*;
+package com.s.rattrouge.Dto;
 
 
-
-
-@Entity
 public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String title;
     private String author;
     private boolean available;
 
-     @ManyToOne
-     private Library library;
 
-     @ManyToOne
-     private Book book;
-
-    public Book(Long id, String title, String author, boolean available, Library library) {
+    public Book(Long id, String title, String author, boolean available) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.available = available;
-        this.library = library;
     }
-
-    public Book() {
-
-    }
+    public Book(){}
 
     public Long getId() {
         return id;
@@ -37,14 +23,6 @@ public class Book {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Library getLibrary() {
-        return library;
-    }
-
-    public void setLibrary(Library library) {
-        this.library = library;
     }
 
     public String getTitle() {
