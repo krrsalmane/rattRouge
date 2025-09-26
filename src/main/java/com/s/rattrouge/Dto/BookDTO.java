@@ -1,7 +1,7 @@
 package com.s.rattrouge.Dto;
 
 
-public class Book {
+public class BookDTO {
 
     private Long id;
     private String title;
@@ -9,13 +9,13 @@ public class Book {
     private boolean available;
 
 
-    public Book(Long id, String title, String author, boolean available) {
+    public BookDTO(Long id, String title, String author, boolean available) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.available = available;
     }
-    public Book(){}
+    public BookDTO(){}
 
     public Long getId() {
         return id;

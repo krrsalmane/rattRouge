@@ -2,7 +2,7 @@ package com.s.rattrouge.Dto;
 
 
 
-public class Admin {
+public class AdminDTO {
 
     private Long id;
     private String name;
@@ -10,7 +10,7 @@ public class Admin {
     private String telephone;
     private String password;
 
-    public Admin(Long id, String name, String email, String telephone, String password) {
+    public AdminDTO(Long id, String name, String email, String telephone, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
