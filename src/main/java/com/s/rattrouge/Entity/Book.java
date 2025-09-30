@@ -2,8 +2,6 @@ package com.s.rattrouge.Entity;
 import jakarta.persistence.*;
 
 
-
-
 @Entity
 public class Book {
     @Id
@@ -13,18 +11,11 @@ public class Book {
     private String author;
     private boolean available;
 
-     @ManyToOne
-     private Library library;
-
-     @ManyToOne
-     private Book book;
-
-    public Book(Long id, String title, String author, boolean available, Library library) {
+    public Book(Long id, String title, String author, boolean available) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.available = available;
-        this.library = library;
     }
 
     public Book() {
@@ -37,14 +28,6 @@ public class Book {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Library getLibrary() {
-        return library;
-    }
-
-    public void setLibrary(Library library) {
-        this.library = library;
     }
 
     public String getTitle() {
