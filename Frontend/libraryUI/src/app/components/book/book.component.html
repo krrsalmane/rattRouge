@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LibraByte - Create Book</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-gray-100 to-purple-200">
+<!-- Header -->
+<header class="flex justify-between items-center p-5 bg-white bg-opacity-10">
+  <div class="text-2xl font-light text-yellow-800">
+    Libra<span class="font-semibold text-gray-800">Byte</span>
+  </div>
+  <div class="flex items-center space-x-5">
+    <span class="text-sm text-gray-600">Welcome, User!</span>
+    <button class="bg-green-800 text-white px-6 py-2 rounded-lg text-sm font-medium">Library</button>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-1 flex items-center justify-center p-10">
+  <div class="flex bg-white bg-opacity-95 rounded-2xl shadow-2xl max-w-4xl w-full min-h-[500px]">
+    <!-- Left Side - Form -->
+    <div class="flex-1 p-12 flex flex-col justify-center">
+      <h1 class="text-3xl font-light text-gray-800 mb-10">Create New Book</h1>
+
+      <div class="space-y-6">
+        <div>
+          <label class="block text-sm text-gray-600 font-medium mb-2">Title</label>
+          <input type="text" class="w-full p-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-sm focus:outline-none focus:border-green-800" placeholder="Enter book title">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-600 font-medium mb-2">Author</label>
+          <input type="text" class="w-full p-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-sm focus:outline-none focus:border-green-800" placeholder="Enter author name">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-600 font-medium mb-2">Availability</label>
+          <select class="w-full p-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-sm focus:outline-none focus:border-green-800">
+            <option value="available">Available</option>
+            <option value="not-available">Not Available</option>
+          </select>
+        </div>
+
+        <button class="w-full bg-green-800 text-white p-3 rounded-lg text-base font-medium hover:bg-green-700 transition">Create Book</button>
+      </div>
+    </div>
+
+    <!-- Right Side - Illustration -->
+    <div class="flex-1 bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0">
+        <!-- Sparkles -->
+        <div class="absolute w-2 h-2 bg-blue-300 rounded-full top-[15%] left-[20%] animate-sparkle"></div>
+        <div class="absolute w-1.5 h-1.5 bg-blue-300 rounded-full top-[70%] left-[75%] animate-sparkle animation-delay-1000"></div>
+        <div class="absolute w-2.5 h-2.5 bg-blue-300 rounded-full top-[25%] right-[15%] animate-sparkle animation-delay-2000"></div>
+        <div class="absolute w-1 h-1 bg-blue-300 rounded-full bottom-[25%] left-[30%] animate-sparkle animation-delay-500"></div>
+        <div class="absolute w-1.75 h-1.75 bg-blue-300 rounded-full top-[50%] left-[10%] animate-sparkle animation-delay-1500"></div>
+        <div class="absolute w-1.25 h-1.25 bg-blue-300 rounded-full top-[35%] right-[25%] animate-sparkle animation-delay-2500"></div>
+        <!-- Leaves -->
+        <div class="absolute w-8 h-8 bg-green-400 bg-opacity-30 rounded-tr-full rounded-bl-full top-[15%] left-[10%] transform rotate-45"></div>
+        <div class="absolute w-8 h-8 bg-green-400 bg-opacity-30 rounded-tr-full rounded-bl-full top-[70%] right-[15%] transform -rotate-30"></div>
+        <div class="absolute w-8 h-8 bg-green-400 bg-opacity-30 rounded-tr-full rounded-bl-full bottom-[20%] left-[20%] transform rotate-60"></div>
+      </div>
+
+      <div class="relative z-10 max-w-[350px] w-full">
+        <svg width="300" height="300" viewBox="0 0 300 300">
+          <!-- Bottom book - Red -->
+          <rect x="50" y="200" width="200" height="25" fill="#e74c3c" rx="3" transform="rotate(-2 150 212)" />
+          <rect x="245" y="198" width="8" height="29" fill="#c0392b" rx="2" transform="rotate(-2 249 212)" />
+          <!-- Second book - Orange -->
+          <rect x="55" y="175" width="190" height="25" fill="#f39c12" rx="3" transform="rotate(1 150 187)" />
+          <rect x="242" y="173" width="8" height="29" fill="#e67e22" rx="2" transform="rotate(1 246 187)" />
+          <!-- Third book - Green -->
+          <rect x="45" y="150" width="210" height="25" fill="#2ecc71" rx="3" transform="rotate(-1 150 162)" />
+          <rect x="252" y="148" width="8" height="29" fill="#27ae60" rx="2" transform="rotate(-1 256 162)" />
+          <!-- Fourth book - Blue -->
+          <rect x="60" y="125" width="180" height="25" fill="#3498db" rx="3" transform="rotate(2 150 137)" />
+          <rect x="237" y="123" width="8" height="29" fill="#2980b9" rx="2" transform="rotate(2 241 137)" />
+          <!-- Fifth book - Purple -->
+          <rect x="40" y="100" width="220" height="25" fill="#9b59b6" rx="3" transform="rotate(-1.5 150 112)" />
+          <rect x="257" y="98" width="8" height="29" fill="#8e44ad" rx="2" transform="rotate(-1.5 261 112)" />
+          <!-- Top book - Teal with pattern -->
+          <rect x="55" y="75" width="190" height="25" fill="#1abc9c" rx="3" transform="rotate(1.5 150 87)" />
+          <rect x="242" y="73" width="8" height="29" fill="#16a085" rx="2" transform="rotate(1.5 246 87)" />
+          <!-- Book details/patterns -->
+          <rect x="60" y="78" width="15" height="19" fill="#f1c40f" rx="2" transform="rotate(1.5 67 87)" />
+          <rect x="80" y="78" width="15" height="19" fill="#f1c40f" rx="2" transform="rotate(1.5 87 87)" />
+          <!-- Small plant pot -->
+          <rect x="275" y="225" width="10" height="15" fill="#2ecc71" rx="5" />
+          <rect x="275" y="220" width="10" height="5" fill="#27ae60" rx="2" />
+          <!-- Pen -->
+          <rect x="30" y="240" width="80" height="4" fill="#34495e" rx="2" transform="rotate(-15 70 242)" />
+          <rect x="105" y="238" width="10" height="8" fill="#f39c12" rx="2" transform="rotate(-15 110 242)" />
+          <!-- Decorative leaves -->
+          <path d="M20 80 Q30 70 40 80 Q30 90 20 80" fill="rgba(46, 204, 113, 0.3)" />
+          <path d="M260 40 Q270 30 280 40 Q270 50 260 40" fill="rgba(46, 204, 113, 0.3)" />
+          <path d="M30 260 Q40 250 50 260 Q40 270 30 260" fill="rgba(46, 204, 113, 0.3)" />
+          <!-- Stars/sparkles -->
+          <polygon points="50,30 52,36 58,36 53,40 55,46 50,42 45,46 47,40 42,36 48,36" fill="rgba(135, 206, 235, 0.8)" />
+          <polygon points="220,20 221,24 225,24 222,26 223,30 220,28 217,30 218,26 215,24 219,24" fill="rgba(135, 206, 235, 0.8)" />
+          <polygon points="270,180 271,184 275,184 272,186 273,190 270,188 267,190 268,186 265,184 269,184" fill="rgba(135, 206, 235, 0.8)" />
+          <polygon points="40,180 41,184 45,184 42,186 43,190 40,188 37,190 38,186 35,184 39,184" fill="rgba(135, 206, 235, 0.8)" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
