@@ -26,6 +26,10 @@ public class BookServiceImpl implements BookServiceInterface {
         return mapper.toDTO(savedBook);
     }
 
-
+    @Override
+    public List<BookDTO> getAllBooks() {
+        List<Book> books = repository.findAll();
+        return mapper.toDTOs(books);
+    }
 
 }
