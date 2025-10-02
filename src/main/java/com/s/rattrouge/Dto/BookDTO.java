@@ -1,15 +1,32 @@
 package com.s.rattrouge.Dto;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 
+@Schema(description = "Book Data Transfer Object")
 public class BookDTO {
 
+    @Schema(description = "Book ID", example = "1")
     private Long id;
+    
+    @NotBlank(message = "Title is required")
+    @Size(min = 1, max = 255, message = "Title must be between 1 and 255 characters")
+    @Schema(description = "Book title", example = "Spring Boot Guide", required = true)
     private String title;
+    
+    @NotBlank(message = "Author is required")
+    @Size(min = 1, max = 255, message = "Author name must be between 1 and 255 characters")
+    @Schema(description = "Book author", example = "John Doe", required = true)
     private String author;
-    private boolean available;
+    
+    @NotNull(message = "Availability status is required")
+    @Schema(description = "Book availability status", example = "true", required = true)
+    private Boolean available;
 
 
-    public BookDTO(Long id, String title, String author, boolean available) {
+    public BookDTO(Long id, String title, String author, Boolean available) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -41,11 +58,11 @@ public class BookDTO {
         this.author = author;
     }
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 }

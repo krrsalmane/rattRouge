@@ -23,11 +23,7 @@
   <div class="bg-white bg-opacity-95 rounded-2xl shadow-2xl p-10 max-w-5xl w-full">
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl font-light text-gray-800">Your Books Collection ({{books.length}})</h1>
-      <button 
-        (click)="refreshBooks()"
-        class="bg-green-800 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition">
-        Refresh
-      </button>
+      
     </div>
 
     <div *ngIf="books.length === 0" class="text-center py-12 text-gray-500">

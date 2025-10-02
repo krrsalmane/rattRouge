@@ -9,9 +9,9 @@ public class Book {
     private Long id;
     private String title;
     private String author;
-    private boolean available;
+    private Boolean available;
 
-    public Book(Long id, String title, String author, boolean available) {
+    public Book(Long id, String title, String author, Boolean available) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -46,11 +46,11 @@ public class Book {
         this.author = author;
     }
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 }

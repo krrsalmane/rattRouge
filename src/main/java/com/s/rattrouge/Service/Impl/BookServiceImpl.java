@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-
 @Service
 public class BookServiceImpl implements BookServiceInterface {
 
     private  final BookRepository repository;
     private final BookMapper mapper;
+
     public BookServiceImpl(BookRepository repository, BookMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
@@ -31,5 +31,4 @@ public class BookServiceImpl implements BookServiceInterface {
         List<Book> books = repository.findAll();
         return mapper.toDTOs(books);
     }
-
 }
