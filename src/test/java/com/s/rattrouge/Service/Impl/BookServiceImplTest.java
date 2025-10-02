@@ -54,4 +54,30 @@ class BookServiceImplTest {
         assertEquals("John", result.getAuthor());
     }
 
+    @Test
+    void testGetAllBooks() {
+        // Entities
+        Book book1 = new Book(); book1.setId(1L); book1.setTitle("Angular");
+        Book book2 = new Book(); book2.setId(2L); book2.setTitle("Spring Boot");
+
+        List<Book> entities = List.of(book1, book2);
+
+        // DTOs
+        BookDTO dto1 = new BookDTO(); dto1.setId(1L); dto1.setTitle("Angular");
+        BookDTO dto2 = new BookDTO(); dto2.setId(2L); dto2.setTitle("Spring Boot");
+
+        List<BookDTO> dtoList = List.of(dto1, dto2);
+
+        // Mock behavior
+        when(repository.findAll()).thenReturn(entities);
+        when(mapper.toDTOs(entities)).thenReturn(dtoList);
+
+        // Call service
+        List<BookDTO> result = service.getAllBooks();
+
+        // Check
+        assertEquals(2, result.size());
+        assertEquals("Angular", result.get(0).getTitle());
+        assertEquals("Spring Boot", result.get(1).getTitle());
+    }
 }
