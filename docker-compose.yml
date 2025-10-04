@@ -1,0 +1,41 @@
+services:
+  ratt-rouge-db:
+    container_name: ratt-rouge-container
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: rattRougedb
+    ports:
+      - "3307:3306"
+    networks:
+      - ratt-rouge-net
+    volumes:
+      - ratt-rouge-vol:/var/lib/mysql
+
+  ratt-rouge-app:
+    build:
+      context: .
+    container_name: rattRouge
+    ports:
+      - "8083:8083"
+    depends_on:
+      - ratt-rouge-db
+    networks:
+      - ratt-rouge-net
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://ratt-rouge-db:3306/rattRougedb?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8083/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  ratt-rouge-net:
+    driver: bridge
+
+volumes:
+  ratt-rouge-vol:
